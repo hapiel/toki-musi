@@ -1,6 +1,7 @@
 import markovify
 import os
 from pathlib import Path
+import re
 
 data_folder = Path("text/tp_texts_small/")
 
@@ -16,6 +17,31 @@ for (dirpath, _, filenames) in os.walk(data_folder):
                 combined_model = model
 
 
+def string_end(string, wordcount):
+    # return the last words of a string, without the special characters
+
+    clean_string = re.sub(r"[^a-zA-Z0-9\s]","", string)
+    
+    if (len(clean_string.split())) >= wordcount:
+        return " ".join(clean_string.split()[-wordcount:])
+    else:
+        return clean_string
+
+
+sentence = combined_model.make_sentence(test_output = False, max_words=15)
+print(sentence)
+
 for i in range(5):
-    print(combined_model.make_sentence_with_start(beginning=("jan pona"), strict=False, test_output = False, max_words=15))
+    # try to make a sentence with last 2 words of previous string
+    try:
+        sentence = combined_model.make_sentence_with_start(beginning=(string_end(sentence, 2)), strict=False, test_output = False, max_words=15)
+    except:
+        try:
+            # try to make a sentence with last word of string
+            sentence = combined_model.make_sentence_with_start(beginning=(string_end(sentence, 1)), strict=False, test_output = False, max_words=15)
+        except:
+            # make new sentence
+            sentence = combined_model.make_sentence(test_output = False, max_words=15)
+    
+    print(sentence)
 
