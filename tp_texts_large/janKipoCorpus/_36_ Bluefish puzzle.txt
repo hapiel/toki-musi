@@ -1,18 +1,18 @@
 36
 #mi_wile_open_laso_kala
-  [Dániel Rónaszéki]
+  [DÃ¡niel RÃ³naszÃ©ki]
   seme?
-  [Zoltán Gorza]
+  [ZoltÃ¡n Gorza]
 Mi moli utala
-[Dániel Rónaszéki] 
+[DÃ¡niel RÃ³naszÃ©ki] 
   ?
   
- [Kacper Sokołowski]
+ [Kacper SokoÅ‚owski]
 
 tan "laso kala" la ona li ken ala
-[Zoltán Gorza]
+[ZoltÃ¡n Gorza]
 ala li ken ala (: ali li pona
-  [Kacper Sokołowski]
+  [Kacper SokoÅ‚owski]
   Matthew Richardson https://www.youtube.com/watch?v=dQpOAyWCGtE ??
   
    Bluefish
@@ -24,9 +24,9 @@ ala li ken ala (: ali li pona
   .. jan Mosijo li lon ma ale
   [Zoltan Gorza]
   jan Posuka la jan Mosijo li jan pona
-  [Kacper Sokołowski]
+  [Kacper SokoÅ‚owski]
 tenpo ale la mi mute li jan pona!
-[Zoltán Gorza]
+[ZoltÃ¡n Gorza]
 a a! pini la mi kama sona. nimi 'laso kala/kala laso' li sona ala e kala laso. taso ona li sona e jan (pi kalama ) musi pi nimi "Bluefish" anu 'Kalalaso' anu 'Pupi'. sina wile kalama/pana e pali ona. tan ni la sina wile toki e ni: 'mi wile pana e pali pi jan musi Pupi' anu sama lili.
 [John Clifford]
 
@@ -35,19 +35,19 @@ a a! pini la mi kama sona. nimi 'laso kala/kala laso' li sona ala e kala laso. t
 
 
 #mi_wile_open_laso_kala
-  [Dániel Rónaszéki]
+  [DÃ¡niel RÃ³naszÃ©ki]
   seme?
-  [Zoltán Gorza]
+  [ZoltÃ¡n Gorza]
 Mi moli utala
-[Dániel Rónaszéki] 
+[DÃ¡niel RÃ³naszÃ©ki] 
   ?
   
- [Kacper Sokołowski]
+ [Kacper SokoÅ‚owski]
 
 tan "laso kala" la ona li ken ala
-[Zoltán Gorza]
+[ZoltÃ¡n Gorza]
 ala li ken ala (: ali li pona
-  [Kacper Sokołowski]
+  [Kacper SokoÅ‚owski]
   Matthew Richardson https://www.youtube.com/watch?v=dQpOAyWCGtE ??
   
    Bluefish
@@ -59,9 +59,9 @@ ala li ken ala (: ali li pona
   .. jan Mosijo li lon ma ale
   [Zoltan Gorza]
   jan Posuka la jan Mosijo li jan pona
-  [Kacper Sokołowski]
+  [Kacper SokoÅ‚owski]
 tenpo ale la mi mute li jan pona!
-[Zoltán Gorza]
+[ZoltÃ¡n Gorza]
 a a! pini la mi kama sona. nimi 'laso kala/kala laso' li sona ala e kala laso. taso ona li sona e jan (pi kalama ) musi pi nimi "Bluefish" anu 'Kalalaso' anu 'Pupi'. sina wile kalama/pana e pali ona. tan ni la sina wile toki e ni: 'mi wile pana e pali pi jan musi Pupi' anu sama lili.
 [John Clifford]
   

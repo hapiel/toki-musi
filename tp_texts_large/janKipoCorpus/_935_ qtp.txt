@@ -1,6 +1,6 @@
 935
 
-‎Rodrigo Portela
+â€ŽRodrigo Portela
 mi pali e lipu kepeken toki mute. mi pana e nimi lili ISO tawa toki ale (kepeken nasin ni la toki Inli li jo e nimi <<en>>, toki Losupan li jo e nimi <<jbo>>...), taso toki pona li jo ala e nimi lili ISO. mi sona pona la jan li wile pana e nimi pi open nimi <<q>> tawa toki pi nimi ISO ala, kepeken nimi sama ni: <<qtp>>. ona li ike lukin, taso nimi lili ante li pona ala kepeken nasin ISO... anu seme?
   
   Marco Manrique 
@@ -18,7 +18,7 @@ John Clifford no 'e' with 'sama' (preposition).
 
 935a
 
-‎Rodrigo Portela
+â€ŽRodrigo Portela
 mi pali e lipu kepeken toki mute. mi pana e nimi lili ISO tawa toki ale (kepeken nasin ni la toki Inli li jo e nimi <<en>>, toki Losupan li jo e nimi <<jbo>>...), taso toki pona li jo ala e nimi lili ISO. mi sona pona la jan li wile pana e nimi pi open nimi <<q>> tawa toki pi nimi ISO ala, kepeken nimi sama ni: <<qtp>>. ona li ike lukin, taso nimi lili ante li pona ala kepeken nasin ISO... anu seme?
   
   Marco Manrique 
@@ -30,7 +30,7 @@ ona li pona ala pona tawa sina? mi pilin ike lili tan open nimi, tan sitelen <<q
 Marco Manrique 
 mi la nimi lili <<qtp>> li pona mute li sama waso nasa anu waso Peacock.
 
-[‎Rodrigo Portela
+[â€ŽRodrigo Portela
 I made a book using several languages.  I gave an ISO abbreviation to each language (in this system, English has the word "en", Lojban has the word "jbo"). But toki pona does not have an ISO abbreviation.  If I understand correctly, people want to give words which begin with "q" to languages which don't have ISO words, using a word like "qtp". It is ugly,  But aren't other abbreviation bad according to ISO rules?  
   
   Marco Manrique 
