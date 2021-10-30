@@ -1,14 +1,29 @@
 import csv
 
-
-
 #to check what line of the csv file / what text is worked on
-line_number = 0
+text_index = 0
 construction_word = ''
 current_word = ''
 
 
 control_value = ''
+
+def repeat_word_count(repeated_words):
+
+
+    for element in words:
+        if len(element) > 3:
+            if words.count(element) > 1:
+                repeated_words.append([element, words.count(element)])
+
+    # clean_repeated = list(dict.fromkeys(repeated_words))
+
+    # used to check which line we are working on
+    print("Text " + str(text_index))
+    print(repeated_words)
+
+    # reset repeated_words
+    repeated_words = []
 
 with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
     textreader = csv.reader(csvfile, delimiter=',')
@@ -20,45 +35,34 @@ with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
         else:
             words = []
             repeated_words = []
-            #updating the line number
-            line_number += 1
+            line = 0
+
+            #updating the text index
+            text_index += 1
 
             # to check the number of words in a poem
             word_count = 0
 
-            #for each character in the poem
+            #for each character in the poem create a python list of all words
             for i in row[4]:
                 if i != ' ' and i != '\n' and i != ',' and i != ':' and i != '.' and i != '-' and i != '"' and i != '?' and i != '!' and i != '—' and i != '\xa0':
                     current_word = construction_word + i
                     construction_word = current_word
+                #separation of words
                 if i == ' ' or i == '\n':
                     word_count += 1
                     words.append(current_word)
                     construction_word = ''
-
-            # checking all repeating words
-            for element in words:
-                if len(element) > 3:
-                    if words.count(element) > 1:
-                        repeated_words.append(element)
+                    if i == '\n':
+                        line += 1
+            #to have the correct amount of lines
+            line += 1
 
 
-            # used to check which line we are working on
-            print("Text " + str(line_number))
-            #print('\n')
-            print(repeated_words)
+            #Call the repeated word function
+            #repeat_word_count(repeated_words)
+            print(line)
 
-
-            #reset repeated_words
-            repeated_words = []
-
-            # for i in words:
-            #     control_value = i
-            #     continue
-            #
-            #     if (i == control_value) and (i != 'a') and (i != 'I') and (i != 'the') and (i != 'is'):
-            #         repeated_words.append(i)
-            #         control_value = ''
 
         #to have to correct amount of words
         word_count += 1
@@ -66,8 +70,6 @@ with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
         # used to check the amount of words in a text
         #print(word_count)
         #print(words)
-
-
 
 
 
