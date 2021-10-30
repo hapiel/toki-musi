@@ -16,6 +16,10 @@ for (dirpath, _, filenames) in os.walk(data_folder):
             else:
                 combined_model = model
 
+# store model as json
+# model_json = combined_model.to_json()
+# with open('data.json', 'w') as file:
+#     file.write(model_json)
 
 def string_end(string, wordcount):
     # return the last words of a string, without the special characters
