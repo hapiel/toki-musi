@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f8a9576-4696-46e4-ae52-c9c048dd526e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/English 2.0/repeated_words.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/English 2.0/repeated_words.py" beforeDir="false" afterPath="$PROJECT_DIR$/English 2.0/repeated_words.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
