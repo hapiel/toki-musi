@@ -39,19 +39,21 @@ def analysePoem(poem):
 
     return noLines, noEmptyLines, averageLineLength, averageSyllables
 
-with open('kaggle_poem_dataset.csv', newline='') as f:
-    reader = csv.reader(f)
-    for i in reader:
-        if(i[0] == 'x'):
-            continue
-        # Useful in case you want to check if it works quickly.
-        elif(i[0] == '20'):
-            break
-        noLines, noEmptyLines, averageLineLength, averageSyllables = analysePoem(i[CONTENT])
+# with open('kaggle_poem_dataset.csv', newline='', encoding="utf-8") as f:
+#     reader = csv.reader(f)
+#     for i in reader:
+#         if(i[0] == 'x'):
+#             continue
+#         # Useful in case you want to check if it works quickly.
+#         elif(i[0] == '20'):
+#             break
+#         noLines, noEmptyLines, averageLineLength, averageSyllables = analysePoem(i[CONTENT])
 
-        print(i[TITLE])
-        print("noLines: ", noLines)
-        print("noEmptylines: ", noEmptyLines)
-        print("averageLineLength: ", averageLineLength)
-        print("averageSyllables: ", averageSyllables)
-        print()
+#         print(i[TITLE])
+#         print("noLines: ", noLines)
+#         print("noEmptylines: ", noEmptyLines)
+#         print("averageLineLength: ", averageLineLength)
+#         print("averageSyllables: ", averageSyllables)
+#         print()
+
+print(syllableCount("o toki mi wile ala moku e kili lili..."))

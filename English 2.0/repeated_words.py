@@ -25,7 +25,7 @@ def repeat_word_count(repeated_words):
     # reset repeated_words
     repeated_words = []
 
-with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
+with open('../english/kaggle_poem_dataset.csv', newline='', encoding="utf-8") as csvfile:
     textreader = csv.reader(csvfile, delimiter=',')
 
     #for each poem
@@ -60,8 +60,8 @@ with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
 
 
             #Call the repeated word function
-            #repeat_word_count(repeated_words)
-            print(line)
+            repeat_word_count(repeated_words)
+            # print(line)
 
 
         #to have to correct amount of words
