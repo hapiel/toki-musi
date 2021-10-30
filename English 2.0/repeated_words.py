@@ -3,32 +3,68 @@ import csv
 
 
 #to check what line of the csv file / what text is worked on
-iter_count = 0
+line_number = 0
 construction_word = ''
 current_word = ''
 words = []
 
+control_value = ''
+
 with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
     textreader = csv.reader(csvfile, delimiter=',')
-    for row in textreader:
-        iter_count += 1
-        # to check the number of words in a poem
-        word_count = 0
-        #print(row[4])
 
-        for i in row[4]:
-            if i != ' ' and i != '\n' and i != ',' and i != ':' and i != '.' and i != '-' and i != '"' and i != '?' and i != '!':
-                current_word = construction_word + i
-                construction_word = current_word
-            if i == ' ' or i == '\n':
-                word_count += 1
-                words.append(current_word)
-                construction_word = ''
+    #for each poem
+    for row in textreader:
+        if row[0] == 'x':
+            continue
+        else:
+            repeated_words = []
+            #updating the line number
+            line_number += 1
+
+            # to check the number of words in a poem
+            word_count = 0
+
+            for i in row[4]:
+                if i != ' ' and i != '\n' and i != ',' and i != ':' and i != '.' and i != '-' and i != '"' and i != '?' and i != '!' and i != '—' and i != '\xa0':
+                    current_word = construction_word + i
+                    construction_word = current_word
+                if i == ' ' or i == '\n':
+                    word_count += 1
+                    words.append(current_word)
+                    construction_word = ''
+
+            # checking all repeating words
+            for element in words:
+                if words.count(element) > 1:
+                    repeated_words.append(element)
+            #repeated_words = any(words.count(element) > 1 for element in words)
+
+            # used to check which line we are working on
+            print("Text " + str(line_number))
+            #print('\n')
+            print(repeated_words)
+
+
+            #reset repeated_words
+            repeated_words = []
+
+            # for i in words:
+            #     control_value = i
+            #     continue
+            #
+            #     if (i == control_value) and (i != 'a') and (i != 'I') and (i != 'the') and (i != 'is'):
+            #         repeated_words.append(i)
+            #         control_value = ''
 
         #to have to correct amount of words
         word_count += 1
-        #print("Text " + str(iter_count))
+
+        # used to check the amount of words in a text
         #print(word_count)
-        print(words)
+        #print(words)
+
+
+
 
 
