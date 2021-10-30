@@ -8,7 +8,7 @@ data_folder = Path("../tp_texts_small/")
 combined_model = None
 for (dirpath, _, filenames) in os.walk(data_folder):
     for filename in filenames:
-        with open(os.path.join(dirpath, filename)) as f:
+        with open(os.path.join(dirpath, filename), encoding="utf-8") as f:
             # print (dirpath + " " + filename)
             model = markovify.Text(f, retain_original=False, state_size=3)
             if combined_model:
