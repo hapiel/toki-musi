@@ -6,7 +6,7 @@ import csv
 line_number = 0
 construction_word = ''
 current_word = ''
-words = []
+
 
 control_value = ''
 
@@ -18,6 +18,7 @@ with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
         if row[0] == 'x':
             continue
         else:
+            words = []
             repeated_words = []
             #updating the line number
             line_number += 1
@@ -25,6 +26,7 @@ with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
             # to check the number of words in a poem
             word_count = 0
 
+            #for each character in the poem
             for i in row[4]:
                 if i != ' ' and i != '\n' and i != ',' and i != ':' and i != '.' and i != '-' and i != '"' and i != '?' and i != '!' and i != '—' and i != '\xa0':
                     current_word = construction_word + i
@@ -36,9 +38,10 @@ with open('../english/kaggle_poem_dataset.csv', newline='') as csvfile:
 
             # checking all repeating words
             for element in words:
-                if words.count(element) > 1:
-                    repeated_words.append(element)
-            #repeated_words = any(words.count(element) > 1 for element in words)
+                if len(element) > 3:
+                    if words.count(element) > 1:
+                        repeated_words.append(element)
+
 
             # used to check which line we are working on
             print("Text " + str(line_number))
