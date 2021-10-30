@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import re
 
-data_folder = Path("text/tp_texts_small/")
+data_folder = Path("../tp_texts_small/")
 
 combined_model = None
 for (dirpath, _, filenames) in os.walk(data_folder):
