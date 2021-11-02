@@ -9,13 +9,15 @@ current_word = ''
 
 control_value = ''
 
-def repeat_word_count(repeated_words):
+def repeat_word_count(repeated_words, words):
 
 
     for element in words:
         if len(element) > 3:
             if words.count(element) > 1:
-                repeated_words.append([element, words.count(element)])
+                raw_percentage = words.count(element) / len(words) * 100
+                percentage = round(raw_percentage, 2)
+                repeated_words.append([element, str(percentage) + "%"])
 
     # clean_repeated = list(dict.fromkeys(repeated_words))
 
@@ -59,23 +61,23 @@ with open('../english/kaggle_poem_dataset.csv', newline='', encoding="utf-8") as
             #to have the correct amount of lines
             line += 1
 
-            print("Welcome to PoetGenerator 101.")
-            themeYesNo = input("Would you like to select a theme? (Enter 'Y' for YES or 'N' for NO) : ")
-            print("You entered : " + themeYesNo)
-            if (themeYesNo == "y" or themeYesNo == "Y"):
-                theme = input("Please enter a word for the theme of your poem : ")
-                print("You entered : " + theme)
-
-            inputPoemYesNo = input("Would you like to enter a poem as a reference for the generated poem? (Enter 'Y' for YES or 'N' for NO) : ")
-            print("You entered : " + inputPoemYesNo)
-            if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
-                print("Please, copy/paste the poem you want to use as a reference : ")
-                inputPoem = sys.stdin.readlines()
-                print("You entered : " + inputPoem)
+            # print("Welcome to PoetGenerator 101.")
+            # themeYesNo = input("Would you like to select a theme? (Enter 'Y' for YES or 'N' for NO) : ")
+            # print("You entered : " + themeYesNo)
+            # if (themeYesNo == "y" or themeYesNo == "Y"):
+            #     theme = input("Please enter a word for the theme of your poem : ")
+            #     print("You entered : " + theme)
+            #
+            # inputPoemYesNo = input("Would you like to enter a poem as a reference for the generated poem? (Enter 'Y' for YES or 'N' for NO) : ")
+            # print("You entered : " + inputPoemYesNo)
+            # if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
+            #     print("Please, copy/paste the poem you want to use as a reference : ")
+            #     inputPoem = sys.stdin.readlines(6)
+            #     print("You entered : " + str(inputPoem))
 
 
             #Call the repeated word function
-            #repeat_word_count(repeated_words)
+            repeat_word_count(repeated_words, words)
             # print(line)
 
 
