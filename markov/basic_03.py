@@ -28,7 +28,7 @@ else:
                 else:
                     model = single_file_model
     model_json = model.to_json()
-    model = MarkovTextExtended.from_json(file.read())
+    model = MarkovTextExtended.from_json(model_json)
     with open('data.json', 'w') as file:
         file.write(model_json)
 
