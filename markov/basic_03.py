@@ -14,7 +14,7 @@ data_folder = PurePath(os.path.dirname(__file__), "../tp_texts_large")
 
 model = None
 
-if os.path.isfile("data.json"):
+if os.path.isfile(PurePath(os.path.dirname(__file__), "data.json")):
     with open('data.json', 'r', encoding="utf-8") as file:
         model = MarkovTextExtended.from_json(file.read())
 else:
@@ -29,7 +29,8 @@ else:
                     model = single_file_model
     model_json = model.to_json()
     model = MarkovTextExtended.from_json(model_json)
-    with open('data.json', 'w') as file:
+    with open(PurePath(os.path.dirname(__file__), "data.json"), 'w') as file:
+        print("NEW DATABASE BUILT")
         file.write(model_json)
 
 
