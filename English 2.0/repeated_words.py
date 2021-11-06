@@ -19,14 +19,21 @@ def words_list_maker(text):
     words = []
     current_word = ''
     construction_word = ''
-    for word in text:
-        if word != ' ' and word != '\n' and word != ',' and word != ':' and word != '.' and word != '-' and word != '"' and word != '?' and word != '!' and word != '—' and word != '\xa0':
-            current_word = construction_word + word
+    for i in text:
+        if i != ' ' and i != '\n' and i != ',' and i != ':' and i != '.' and i != '-' and i != '"' and i != '?' and i != '!' and i != '—' and i != '\xa0':
+            current_word = construction_word + i
             construction_word = current_word
             # separation of words
-        if word == ' ' or word == '\n':
-            words.append(current_word)
-            construction_word = ''
+        else:
+            if current_word != '':
+                words.append(current_word)
+                current_word = ''
+                construction_word = ''
+
+    for word in words:
+        if len(word) == 0:
+            words.remove(word)
+
     return words
 
 def repeat_word_count(repeated_words, words):
@@ -77,7 +84,7 @@ if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
     #English analysis functions for the input poem
     words = words_list_maker(inputPoem)
     print(words)
-    
+
     #repeat_word_count()
 
 else:
