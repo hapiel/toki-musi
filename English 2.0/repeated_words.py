@@ -65,16 +65,21 @@ if (themeYesNo == "y" or themeYesNo == "Y"):
 
 #Questions about the input poem and taking in the user's inputs
 inputPoemYesNo = input(
-    "Would you like to enter a poem as a reference for the generated poem? You will need to specify how many characters this poem has (Enter 'Y' for YES or 'N' for NO) : ")
+    "Would you like to enter a poem as a reference for the generated poem? You will need to write the reference poem in the poem.txt file (Enter 'Y' for YES or 'N' for NO) : ")
 print("You entered : " + inputPoemYesNo)
 if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
-    characters_input_poem = input("Please enter the amount of characters your poem has : ")
-    print("Please, copy/paste the poem you want to use as a reference and press the key 'ENTER' : ")
-    inputPoemLines = sys.stdin.readlines(int(characters_input_poem))
 
-    # this loop is used to transfer the text that was entered into a string variable
-    for line in inputPoemLines:
-        inputPoem += line
+    poemNext = input("Please write or copy/paste your poem text in the poem.txt file present in this folder. Once you are done, enter 'Y': ")
+
+    if (poemNext == 'y' or poemNext == 'Y'):
+        with open('poem.txt') as f:
+            inputPoemlines = f.readlines()
+
+        # this loop is used to transfer the text that was entered into a string variable
+        for line in inputPoemlines:
+            inputPoem += line
+
+
 
     # print the string variable
     print("You entered : ")
@@ -82,7 +87,8 @@ if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
 
     #English analysis functions for the input poem
     words = words_list_maker(inputPoem)
-    print(words)
+    print()
+    print("List of all words : " + str(words))
 
 
 else:
