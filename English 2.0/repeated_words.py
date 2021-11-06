@@ -35,7 +35,8 @@ def words_list_maker(text):
     return words
 
 def repeat_word_count(repeated_words, words):
-
+    # used to check which line we are working on
+    print("Text " + str(random_text_index))
 
     for element in words:
         if len(element) > 3:
@@ -46,27 +47,19 @@ def repeat_word_count(repeated_words, words):
 
     # clean_repeated = list(dict.fromkeys(repeated_words))
 
-    # used to check which line we are working on
-    print("Text " + str(random_text_index))
-    print(repeated_words)
-
-    # reset repeated_words
-    repeated_words = []
 
 #Beginning of the console printing
 print("Welcome to PoetGenerator 101.")
 
 #Questions about the theme and taking the user's input
 themeYesNo = input("Would you like to select a theme? (Enter 'Y' for YES or 'N' for NO) : ")
-print("You entered : " + themeYesNo)
+
 if (themeYesNo == "y" or themeYesNo == "Y"):
     theme = input("Please enter a word for the theme of your poem : ")
-    print("You entered : " + theme)
 
 #Questions about the input poem and taking in the user's inputs
-inputPoemYesNo = input(
-    "Would you like to enter a poem as a reference for the generated poem? You will need to write the reference poem in the poem.txt file (Enter 'Y' for YES or 'N' for NO) : ")
-print("You entered : " + inputPoemYesNo)
+inputPoemYesNo = input("Would you like to enter a poem as a reference for the generated poem? You will need to write the reference poem in the poem.txt file (Enter 'Y' for YES or 'N' for NO) : ")
+
 if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
 
     poemNext = input("Please write or copy/paste your poem text in the poem.txt file present in this folder. Once you are done, enter 'Y': ")
@@ -78,7 +71,6 @@ if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
         # this loop is used to transfer the text that was entered into a string variable
         for line in inputPoemlines:
             inputPoem += line
-
 
 
     # print the string variable
@@ -110,32 +102,13 @@ else:
 
                 # to check the number of words in a poem
                 word_count = 0
-
-                #for each character in the poem create a python list of all words
-                for i in row[4]:
-                    if i != ' ' and i != '\n' and i != ',' and i != ':' and i != '.' and i != '-' and i != '"' and i != '?' and i != '!' and i != '—' and i != '\xa0':
-                        current_word = construction_word + i
-                        construction_word = current_word
-                    #separation of words
-                    if i == ' ' or i == '\n':
-                        word_count += 1
-                        words.append(current_word)
-                        construction_word = ''
-                        if i == '\n':
-                            line += 1
-                #to have the correct amount of lines
-                line += 1
+                # Create a list of all words in the randomly selected poem
+                print(words_list_maker(row[4]))
 
                 # Call the repeated word function
-                repeat_word_count(repeated_words, words)
+                #repeat_word_count(repeated_words, words)
 
 
-            #to have to correct amount of words
-            #word_count += 1
-
-            #used to check the amount of words in a text
-            # print(word_count)
-            # print(words)
 
 
 
