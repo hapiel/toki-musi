@@ -10,7 +10,7 @@ TRIES = 1000
 
 rewarded_chars = ""
 
-theme_word = "telo"
+theme_word = ""
 
 def count_vowels(string):
     num_vowels=0
@@ -50,16 +50,22 @@ class MarkovChainExtended(markovify.Chain):
             choices = self.begin_choices
             cumdist = self.begin_cumdist
         else:
-            choices, weights = zip(*self.model[state].items())
-            new_weights = []
-            for i, choice in enumerate(choices):
-                if choice == theme_word:
-                    new_weights.append(sum(weights)*3)
-                else:
-                    new_weights.append(weights[i])
-                # else:
-                #     new_weights.append(max(weights[i], weights[i] * (count_char(choice, rewarded_chars) * sum(weights))))
-            cumdist = list(accumulate(new_weights))
+            try:
+                choices, weights = zip(*self.model[state].items())
+            except:
+                # state does not exist in database
+                choices = ("ERROR",)
+                weights = (1,)
+            # new_weights = []
+            # for i, choice in enumerate(choices):
+            #     if choice == theme_word:
+            #         new_weights.append(sum(weights)*3)
+            #     else:
+            #         new_weights.append(weights[i])
+            #     # else:
+            #     #     new_weights.append(max(weights[i], weights[i] * (count_char(choice, rewarded_chars) * sum(weights))))
+            # cumdist = list(accumulate(new_weights))
+            cumdist = list(accumulate(weights))
         r = random.random() * cumdist[-1]
         selection = choices[bisect.bisect(cumdist, r)]
         
@@ -129,24 +135,29 @@ class MarkovTextExtended(markovify.Text):
             parsed_sentences=obj.get("parsed_sentences"),
         )
 
-    def make_sentence_with_rules(self, init_state=None, **kwargs):
+    def make_sentence_with_rules(self, **kwargs):
         
         required_syllables = kwargs.get("syllables", None)
+        init_sentence = kwargs.get("init_sentence", "")
 
-        if init_state is None:
-            prefix = []
-        else:
-            prefix = list(init_state)
-            for word in prefix:
-                if word == BEGIN:
-                    prefix = prefix[1:]
-                else:
-                    break
-        
-        # set the words tuple to BEGIN BEGIN BEGIN, as many begins as state_size
         words = ()
+
+        if init_sentence != "":
+            if count_vowels(init_sentence) > required_syllables:
+                init_sencence = ""
+                words = ()
+                init_count = 0
+            else:
+                sentence_list = init_sentence.split()
+                words = tuple(sentence_list)
+                init_count = len(words)
+        else:
+            words = ()
+            init_count = 0
+
+        # set the words tuple to BEGIN BEGIN BEGIN, as many begins as state_size
         for _ in range (0, self.state_size):
-            words = words + (BEGIN,)
+            words = (BEGIN,) + words  
 
 
         # make sentence
@@ -161,18 +172,20 @@ class MarkovTextExtended(markovify.Text):
                     if new_word == END:
                         break
                 
+                
                 if current_syllables > required_syllables:
-                    words = words[:-(random.randint(1, len(words)-3))]
+                    words = words[:-(random.randint(1, len(words)-self.state_size - init_count))]
                     continue
 
             if new_word == END:
-                words = words[:-(random.randint(1, len(words)-3))]
+                # print(words)
+                if len(words)-self.state_size - init_count > 0:
+                    words = words[:-(random.randint(1, len(words)-self.state_size - init_count ))]
                 continue
-            
             
             words = words + (new_word,)
             if i == TRIES -1:
                 words =  words + ("ERROR",)
-        
+
         # return words without the begin begin begin
         return " ".join(words[self.state_size:])

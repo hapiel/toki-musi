@@ -1,9 +1,13 @@
+from random import randint
 import markovify
 import os
 from pathlib import PurePath
 import re
 
 from modified_markovify import accumulate, MarkovChainExtended, MarkovTextExtended
+
+forwardsFolder = PurePath(os.path.dirname(__file__), "../tp_texts_large")
+backwardsFolder = PurePath(os.path.dirname(__file__), "../reversed/tp_texts_large")
 
 def reverse(line):
     return " ".join(line.split()[::-1])
@@ -31,24 +35,16 @@ def buildModel(inputFolder, storeFile):
 
     return model
 
-forwardsFolder = PurePath(os.path.dirname(__file__), "../tp_texts_large")
-
-backwardsFolder = PurePath(os.path.dirname(__file__), "../reversed/tp_texts_large")
-
-
 # delete json to rebuild the model
 
 forwardsModel = buildModel(forwardsFolder, "forwardsData.json")
-
 backwardsModel = buildModel(backwardsFolder, "backwardsData.json")
 
 
-for i in range(10):
-    line = backwardsModel.make_sentence(test_output=False)
-    print(reverse(line))
+phrase = "soweli suli"
 
-print("--")
+for i in range (11, 16):
+    backwards = backwardsModel.make_sentence_with_rules(syllables = randint(5,10), init_sentence=reverse(phrase))
 
-for i in range(10):
-    line = forwardsModel.make_sentence(test_output=False)
-    print(line)
+    forwards = forwardsModel.make_sentence_with_rules(syllables = i, init_sentence=reverse(backwards))
+    print(forwards)
