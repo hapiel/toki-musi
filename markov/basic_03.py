@@ -15,7 +15,7 @@ data_folder = PurePath(os.path.dirname(__file__), "../tp_texts_large")
 model = None
 
 if os.path.isfile(PurePath(os.path.dirname(__file__), "data.json")):
-    with open('data.json', 'r', encoding="utf-8") as file:
+    with open(PurePath(os.path.dirname(__file__), "data.json"), 'r', encoding="utf-8") as file:
         model = MarkovTextExtended.from_json(file.read())
 else:
     for (dirpath, _, filenames) in os.walk(data_folder):
@@ -51,5 +51,5 @@ for i in range(1, 10):
 
 # print(model.make_sentence_with_rules(syllables=1))
 print(model.make_sentence_with_rules(syllables=10))
-print(model.make_sentence_with_rules(syllables=10))
-print(model.make_sentence_with_rules(syllables=10))
+print(model.make_sentence_with_rules(syllables=20))
+print(model.make_sentence_with_rules(syllables=30))

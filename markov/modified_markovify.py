@@ -10,7 +10,7 @@ TRIES = 1000
 
 rewarded_chars = ""
 
-theme_word = ""
+theme_word = "telo"
 
 def count_vowels(string):
     num_vowels=0
@@ -54,7 +54,7 @@ class MarkovChainExtended(markovify.Chain):
             new_weights = []
             for i, choice in enumerate(choices):
                 if choice == theme_word:
-                    new_weights.append(sum(weights)*2)
+                    new_weights.append(sum(weights)*3)
                 else:
                     new_weights.append(weights[i])
                 # else:
