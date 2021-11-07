@@ -1,6 +1,7 @@
 import csv
-import sys
 import random
+from pathlib import PurePath
+import os
 
 #to check what line of the csv file / what text is worked on
 text_index = 0 #a text index value used when the code goes over every single poem of the database, one by one (the value is increment with each peom that is covered
@@ -65,7 +66,7 @@ if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
     poemNext = input("Please write or copy/paste your poem text in the poem.txt file present in this folder. Once you are done, enter 'Y': ")
 
     if (poemNext == 'y' or poemNext == 'Y'):
-        with open('poem.txt') as f:
+        with open(PurePath(os.path.dirname(__file__),'poem.txt')) as f:
             inputPoemlines = f.readlines()
 
         # this loop is used to transfer the text that was entered into a string variable
@@ -85,7 +86,7 @@ if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
 
 else:
     # English analysis functions for the database random poem
-    with open('../english/kaggle_poem_dataset.csv', newline='', encoding="utf-8") as csvfile:
+    with open(PurePath(os.path.dirname(__file__),'../english/kaggle_poem_dataset.csv'), newline='', encoding="utf-8") as csvfile:
         textreader = csv.reader(csvfile, delimiter=',')
 
         #for each poem

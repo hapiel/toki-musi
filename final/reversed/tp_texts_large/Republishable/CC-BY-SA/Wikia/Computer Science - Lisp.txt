@@ -1,0 +1,59 @@
+' '24 : pana ///li
+) 4 o-mute-pi-insa-nanpa ( ///
+la ni ///tenpo
+) ) ) ) ) 1 n - ( o-mute-pi-insa-nanpa ( n * ( ///
+1 ///
+) n zerop ( if ( ///
+) n ( o-mute-pi-insa-nanpa defun ( ///
+: lukin o 
+ pali e pona li ni toki nasin 
+ ni nimi pi nimi e toki ken nimi pi sin pali
+' 9 ' : pana ///li
+) 3 o-wawa-tu-e-nanpa ( ///
+: la ni tenpo
+) ) n n * ( ///
+) n ( o-wawa-tu-e-nanpa defun ( ///
+: lukin o
+
+ sin linja e pana li ijo e ala ante li pali li nimi 
+ sin nimi e pali o : ni nasin li pali nimi pi nasin li ni toki lon pona pali nasin
+
+ pali nasin
+] ante o [ ///
+
+ '' McCarthy `` jan tawa pona pilin e pana li ni pali toki pi wan kute ilo e pali li pali li pali li ala kute li '' Russell Steve `` jan taso ' 
+ ona e ala kepeken ken li ilo 
+ ala ilo toki li sona li jan toki li mi toki 
+ nasa toki sina 
+ o lili jan 
+ a ' : ni e toki li '' McCarthy `` jan 
+ ' 
+ toki-pona li sina toki 
+ ni toki lon mute ilo tawa toki ken li ale jan la ni ilo e pali mi 
+ sina sin toki pi '' McCarthy `` jan tawa ni e toki li ona 
+ '' McCarthy `` jan pi sona lili jan li '' Russell Steve `` jan 
+ pali toki e pali ala wile li lipu lon ni toki e pali li '' McCarthy John `` jan 
+ kute ilo e sitelen ken mi la 'ken : '' McCarthy `` jan tawa ni e toki li ona 
+ McCarthy jan pi sona lili jan li Russell Steve jan 
+ pali toki e pali ala wile li lipu lon ni toki e pali li '' McCarthy John `` jan : '' wikipedia ``
+: ni e toki li jan
+
+ ni toki e pali li ona la '' Lambda `` nimi pi nanpa pali lon mute pilin li ona 
+ '' McCarthy John `` jan pi lawa tan kama li lili mun pi toki
+
+ ' ala tawa pona pi ike pilin e pana li mute lili 'mun : toki-pona lon 
+ '' Parenthesis Superfluous Irritating of Lots `` toki tan
+
+ ) ' linja 'ante - toki-pona lon ( '' LISt-Processing `` toki ///tan
+: ni tan 
+ '' LISP `` li ona nimi la Inli toki
+: Inli toki lon ni toki pi nimi e pana li ni tu tan
+
+ ale tawa nanpa linja e kepeken li ni pali toki
+
+ ' ) ' kama lili mun e ' ( ' tawa lili mun e mute lili mun e sitelen wile sina la ni toki lon sitelen sina
+
+ pali toki li lili mun pi pali toki
+
+
+ lili mun pi pali toki

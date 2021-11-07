@@ -3,6 +3,8 @@ from nltk.tokenize import SyllableTokenizer
 from nltk import word_tokenize
 import string
 import random
+import os
+from pathlib import PurePath
 
 AUTHOR = 1
 TITLE = 2
@@ -73,31 +75,37 @@ def userInterface():
     inputPoem = None
 
     #Beginning of the console printing
-    print("Welcome to PoetGenerator 101.")
+    print("Welcome to toki poem.")
 
     themeSpecified = False
     while(not themeSpecified):
         #Questions about the theme and taking the user's input
-        themeYesNo = input("Would you like to select a theme? (Enter 'Y' for YES or 'N' for NO) : ")
+        themeYesNo = input("Would you like to use a theme for the generated poem? (Enter 'Y' for YES or 'N' for NO) : ")
 
         if (themeYesNo == "y" or themeYesNo == "Y"):
-            theme = input("Please enter a word for the theme of your poem : ")
+            theme = input("Please enter a toki pona word or phrase as a theme: ")
             themeSpecified = True
         elif(themeYesNo.lower() == 'n'):
             theme = None
             themeSpecified = True
 
     while(inputPoem == None):
-        #Questions about the input poem and taking in the user's inputs
-        inputPoemYesNo = input("Would you like to enter a poem as a reference for the generated poem? You will need to write the reference poem in the poem.txt file (Enter 'Y' for YES or 'N' for NO) : ")
+        #Questions about the input poem and taking in the user's inputsy
+        inputPoemYesNo = input("Would you like to enter a text as a style guide for the generated poem? \n (Enter 'Y' for YES or 'N' for NO) : ")
 
         if (inputPoemYesNo == "y" or inputPoemYesNo == "Y"):
-            poemNext = input("Please write or copy/paste your poem text in the poem.txt file present in this folder. Once you are done, enter 'Y': ")
-            if (poemNext == 'y' or poemNext == 'Y'):
-                with open('poem.txt') as f:
-                    inputPoem = f.read()
+            print("Paste in the poem, and press enter when you're done.")
+            lines = []
+            while True:
+                line = input()
+                if line:
+                    lines.append(line)
+                else:
+                    break
+            text = '\n'.join(lines)
+            inputPoem = text
         elif(inputPoemYesNo.lower() == 'n'):
-            with open('kaggle_poem_dataset.csv', newline='', encoding="utf-8") as f:
+            with open(PurePath(os.path.dirname(__file__),'kaggle_poem_dataset.csv'), newline='', encoding="utf-8") as f:
                 reader = csv.reader(f)
                 random_text_index = random.randint(1, 15651)
                 for i in reader:
@@ -108,7 +116,7 @@ def userInterface():
                         break
 
     # print the string variable
-    print("Poem used: ")
+    print("Poem used as a style guide: ")
     print(inputPoem)
 
     return inputPoem, theme
