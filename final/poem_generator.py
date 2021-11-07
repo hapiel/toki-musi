@@ -64,20 +64,29 @@ line_count, empty_line_count, word_counts, syllable_counts = analyse.analysePoem
 poem_lines = []
 print("\nTHE POEM: \n")
 for i in range (0, line_count):
-
+    if syllable_counts[i] == 0:
+        poem_lines.append("")
+        continue
     for tries in range(0, 100):
         if i != 0:
             if randint(0,4) == 0:
                 current_theme_phrase = theme_phrase
             elif randint(0,1) == 0:
 
-                random_line = choice(poem_lines)
+                random_line = ""
+                while random_line == "":
+                    # pick a non empty line
+                    random_line = choice(poem_lines)
                 words = random_line.split()
                 section_length = randint(1, len(words))
                 start = randint(0, len(words)-section_length)
                 current_theme_phrase = " ".join(words[start:start + section_length])
             else:
-                current_theme_phrase = choice(choice(poem_lines).split())
+                random_line = ""
+                while random_line == "":
+                    # pick a non empty line
+                    random_line = choice(poem_lines)
+                current_theme_phrase = choice(random_line.split())
         else:
             current_theme_phrase = theme_phrase
         backwards = backwardsModel.make_sentence_with_rules(syllables = count_vowels(current_theme_phrase) + randint(0, max(0, syllable_counts[i] - count_vowels(current_theme_phrase))), init_sentence=reverse(current_theme_phrase))
