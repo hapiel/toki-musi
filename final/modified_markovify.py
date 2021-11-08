@@ -1,3 +1,8 @@
+"""
+Adaptation of the markovify library found here:
+https://github.com/jsvine/markovify
+"""
+
 import operator
 import bisect
 import markovify
