@@ -6,7 +6,7 @@ import random
 BEGIN = "___BEGIN__"
 END = "___END__"
 
-TRIES = 1000
+TRIES = 10000
 
 rewarded_chars = ""
 

@@ -81,20 +81,23 @@ def userInterface():
     themeSpecified = False
     while(not themeSpecified):
         #Questions about the theme and taking the user's input
-        themeYesNo = input("Would you like to use a theme for the generated poem? (Enter 'Y' for YES or 'N' for NO) : ")[0]
 
-        if (themeYesNo.lower() == "y"):
+
+
+        themeYesNo = input("Would you like to use a theme for the generated poem? (Enter 'Y' for YES or 'N' for NO) : ")
+
+        if (themeYesNo.lower() == "y" or themeYesNo.lower() == "yes"):
             theme = input("Please enter a toki pona word or phrase as a theme: ")
             themeSpecified = True
-        elif(themeYesNo.lower() == 'n'):
+        elif(themeYesNo.lower() == 'n' or themeYesNo.lower() == 'no'):
             theme = ""
             themeSpecified = True
     print("")
     while(inputPoem == None):
         #Questions about the input poem and taking in the user's inputsy
-        inputPoemYesNo = input("Would you like to enter a text as a style guide for the generated poem? \n(If not, we will use a random English poem from our database)\n(Enter 'Y' for YES or 'N' for NO) : ")[0]
+        inputPoemYesNo = input("Would you like to enter a text as a style guide for the generated poem? \n(If not, we will use a random English poem from our database)\n(Enter 'Y' for YES or 'N' for NO) : ")
 
-        if (inputPoemYesNo.lower() == "y"):
+        if (inputPoemYesNo.lower() == "y" or inputPoemYesNo.lower() == "yes"):
             print("Paste in the poem (without empty lines), and press enter when you're done.\n")
             lines = []
             while True:
@@ -105,7 +108,7 @@ def userInterface():
                     break
             text = '\n'.join(lines)
             inputPoem = text
-        elif(inputPoemYesNo.lower() == 'n'):
+        elif(inputPoemYesNo.lower() == 'n' or inputPoemYesNo.lower() == 'no'):
             with open(PurePath(os.path.dirname(__file__),'kaggle_poem_dataset.csv'), newline='', encoding="utf-8") as f:
                 reader = csv.reader(f)
                 random_text_index = random.randint(1, 15651)

@@ -59,7 +59,7 @@ line_count, empty_line_count, word_counts, syllable_counts = analyse.analysePoem
 # print("noLines: ", line_count)
 # print("noEmptylines: ", empty_line_count)
 # print("lineLenghts: ", word_counts)
-# print("syllableCounts: ", syllable_counts)
+print("syllableCounts: ", syllable_counts)
 
 poem_lines = []
 print("\nTHE POEM: \n")
@@ -67,7 +67,7 @@ for i in range (0, line_count):
     if syllable_counts[i] == 0:
         poem_lines.append("")
         continue
-    for tries in range(0, 100):
+    for tries in range(0, 1000):
         if i != 0:
             if randint(0,4) == 0:
                 current_theme_phrase = theme_phrase
