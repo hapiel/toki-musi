@@ -15,6 +15,8 @@ Date: 8/11/2021
 $ pip install markovify
 ```
 ## How to run
+Only poem_generator.py should be needed to run the project, since the markov model and reversed corpus are included in this archive.
+
+```poem_generator.py``` will generate the  markov models ```backwardsData.json``` and ```forwardsData.json``` if they are not present. It will then ask the user for input and generate a poem accordingly.
 - ```reverse.py``` generates a folder called reverse, which is the dataset, but with all the words reversed. If this folder is not present, or a different dataset is to be used, run this.
-- ```poem_generator.py``` will generate the  markov models ```backwardsData.json``` and ```forwardsData.json``` if they are not present. It will then ask the user for input and generate a poem accordingly.
 - ```modified_markovify.py``` and ```analyse.py``` supply functions to the poem generator. Running them does not generate output.
