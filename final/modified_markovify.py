@@ -1,3 +1,5 @@
+# Modified from the markovify libary: https://github.com/jsvine/markovify
+
 import operator
 import bisect
 import markovify
