@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 # Modified from the markovify libary: https://github.com/jsvine/markovify
+=======
+"""
+Adaptation of the markovify library found here:
+https://github.com/jsvine/markovify
+"""
+>>>>>>> b6e6c22a09d2c756e28c13cb1824d07237acec62
 
 import operator
 import bisect
